@@ -18,6 +18,15 @@ namespace SetCalculator
             Collection = new List<int>();
         }
 
+        public Set(List<int> collection)
+        {
+            Collection = new List<int>();
+            for (int i = 0; i < collection.Count; i++)
+            {
+                this.Add(collection[i]);
+            }
+        }
+
         public override string ToString()
         {
             string res = "";

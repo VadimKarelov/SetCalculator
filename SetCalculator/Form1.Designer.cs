@@ -109,8 +109,10 @@ namespace SetCalculator
             this.textBox_Set1.Name = "textBox_Set1";
             this.textBox_Set1.Size = new System.Drawing.Size(659, 23);
             this.textBox_Set1.TabIndex = 0;
+            this.textBox_Set1.Tag = "1";
             this.textBox_Set1.Text = "-20 -19 -18 -17 -16 -15 -14 -13 - 12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4" +
     " 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
+            this.textBox_Set1.TextChanged += new System.EventHandler(this.TextBoxSet_TextChanged);
             // 
             // groupBox_Set1
             // 
@@ -420,8 +422,10 @@ namespace SetCalculator
             this.textBox_Set2.Name = "textBox_Set2";
             this.textBox_Set2.Size = new System.Drawing.Size(659, 23);
             this.textBox_Set2.TabIndex = 10;
+            this.textBox_Set2.Tag = "2";
             this.textBox_Set2.Text = "-20 -19 -18 -17 -16 -15 -14 -13 - 12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4" +
     " 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
+            this.textBox_Set2.TextChanged += new System.EventHandler(this.TextBoxSet_TextChanged);
             // 
             // groupBox_Set3
             // 
@@ -570,8 +574,10 @@ namespace SetCalculator
             this.textBox_Set3.Name = "textBox_Set3";
             this.textBox_Set3.Size = new System.Drawing.Size(659, 23);
             this.textBox_Set3.TabIndex = 20;
+            this.textBox_Set3.Tag = "3";
             this.textBox_Set3.Text = "-20 -19 -18 -17 -16 -15 -14 -13 - 12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4" +
     " 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
+            this.textBox_Set3.TextChanged += new System.EventHandler(this.TextBoxSet_TextChanged);
             // 
             // textBox_SavedSet
             // 
@@ -591,6 +597,7 @@ namespace SetCalculator
             this.textBox_Result.Location = new System.Drawing.Point(717, 252);
             this.textBox_Result.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Result.Name = "textBox_Result";
+            this.textBox_Result.ReadOnly = true;
             this.textBox_Result.Size = new System.Drawing.Size(659, 23);
             this.textBox_Result.TabIndex = 43;
             this.textBox_Result.Text = "-20 -19 -18 -17 -16 -15 -14 -13 - 12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4" +
