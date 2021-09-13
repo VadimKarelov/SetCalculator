@@ -1,0 +1,10 @@
+D:\Projects\C#\DiscreteMath\SetCalculator\SetCalculator\bin\Debug\SetCalculator.exe.config
+D:\Projects\C#\DiscreteMath\SetCalculator\SetCalculator\bin\Debug\SetCalculator.exe
+D:\Projects\C#\DiscreteMath\SetCalculator\SetCalculator\bin\Debug\SetCalculator.pdb
+D:\Projects\C#\DiscreteMath\SetCalculator\SetCalculator\obj\Debug\SetCalculator.csproj.AssemblyReference.cache
+D:\Projects\C#\DiscreteMath\SetCalculator\SetCalculator\obj\Debug\SetCalculator.Form1.resources
+D:\Projects\C#\DiscreteMath\SetCalculator\SetCalculator\obj\Debug\SetCalculator.Properties.Resources.resources
+D:\Projects\C#\DiscreteMath\SetCalculator\SetCalculator\obj\Debug\SetCalculator.csproj.GenerateResource.cache
+D:\Projects\C#\DiscreteMath\SetCalculator\SetCalculator\obj\Debug\SetCalculator.csproj.CoreCompileInputs.cache
+D:\Projects\C#\DiscreteMath\SetCalculator\SetCalculator\obj\Debug\SetCalculator.exe
+D:\Projects\C#\DiscreteMath\SetCalculator\SetCalculator\obj\Debug\SetCalculator.pdb
