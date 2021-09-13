@@ -25,7 +25,10 @@ namespace SetCalculator
             radioButton_Manual2.Checked = true;
             radioButton_Manual3.Checked = true;
 
-            // radiobutton operands and operation
+            radioButton_Set11.Checked = true;
+            radioButton_Set21.Checked = true;
+
+            radioButton_Addition.Checked = true;
         }
     }
 }
