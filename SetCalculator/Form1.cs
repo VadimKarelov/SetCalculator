@@ -17,6 +17,11 @@ namespace SetCalculator
         private Set set3 = new Set();
         private Set set4 = new Set();
 
+        private int size1 = 0;
+        private int size2 = 0;
+        private int size3 = 0;
+        private int size4 = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -46,25 +51,55 @@ namespace SetCalculator
                 try
                 {
                     res = tb.Text.Split(' ').ToList().Select(int.Parse).ToList();
-                    SetWarningMessage(ind, "OK");
+                    SetColorToTextBox(ref tb, Color.White);
                     SetSet(ind, new Set(res));
                 }
                 catch
                 {
-                    SetWarningMessage(ind, "Не удалось получить множество");
+                    SetColorToTextBox(ref tb, Color.Red);
+                }                
+            }
+        }
+
+        private void CheckSizeOfSet(object sender, EventArgs e)
+        {
+            if (sender is TextBox tb)
+            {
+                try
+                {
+                    int res = int.Parse(tb.Text);
+                    if (res >= 0 && res <= 41)
+                        SetColorToTextBox(ref tb, Color.White);
+                    else
+                        throw new Exception();
+                }
+                catch
+                {
+                    SetColorToTextBox(ref tb, Color.Red);
+                }
+            }
+        }
+
+        private void Auto_Enabled(object sender, EventArgs e)
+        {
+            if (sender is RadioButton rb && rb.Enabled)
+            {
+                int ind = int.Parse(rb.Parent.Tag.ToString());
+                try
+                {
+                    //int size = int.Parse()
+                }
+                catch
+                {
+
                 }
             }
         }
 
         // === use correct element ===
-        private void SetWarningMessage(int n, string text)
+        private void SetColorToTextBox(ref TextBox tb, Color color)
         {
-            switch (n)
-            {
-                case 1: label_Warning1.Text = text; break;
-                case 2: label_Warning2.Text = text; break;
-                case 3: label_Warning3.Text = text; break;
-            }
+            tb.BackColor = color;
         }
 
         private void SetSet(int n, Set set)

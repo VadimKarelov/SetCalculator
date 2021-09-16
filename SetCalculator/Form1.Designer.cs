@@ -31,7 +31,6 @@ namespace SetCalculator
         {
             this.textBox_Set1 = new System.Windows.Forms.TextBox();
             this.groupBox_Set1 = new System.Windows.Forms.GroupBox();
-            this.label_Warning1 = new System.Windows.Forms.Label();
             this.textBox_Size1 = new System.Windows.Forms.TextBox();
             this.label_N1 = new System.Windows.Forms.Label();
             this.textBox_Multiplicity1 = new System.Windows.Forms.TextBox();
@@ -44,7 +43,6 @@ namespace SetCalculator
             this.radioButton_Auto1 = new System.Windows.Forms.RadioButton();
             this.radioButton_Manual1 = new System.Windows.Forms.RadioButton();
             this.groupBox_Set2 = new System.Windows.Forms.GroupBox();
-            this.label_Warning2 = new System.Windows.Forms.Label();
             this.textBox_Size2 = new System.Windows.Forms.TextBox();
             this.label_N2 = new System.Windows.Forms.Label();
             this.textBox_Multiplicity2 = new System.Windows.Forms.TextBox();
@@ -58,11 +56,11 @@ namespace SetCalculator
             this.radioButton_Manual2 = new System.Windows.Forms.RadioButton();
             this.textBox_Set2 = new System.Windows.Forms.TextBox();
             this.groupBox_Set3 = new System.Windows.Forms.GroupBox();
-            this.label_Warning3 = new System.Windows.Forms.Label();
             this.textBox_Size3 = new System.Windows.Forms.TextBox();
             this.label_N3 = new System.Windows.Forms.Label();
             this.textBox_Multiplicity3 = new System.Windows.Forms.TextBox();
             this.radioButton_Negative3 = new System.Windows.Forms.RadioButton();
+            this.radioButton_Universum3 = new System.Windows.Forms.RadioButton();
             this.radioButton_Odd3 = new System.Windows.Forms.RadioButton();
             this.radioButton_Multiplicity3 = new System.Windows.Forms.RadioButton();
             this.radioButton_Even3 = new System.Windows.Forms.RadioButton();
@@ -92,7 +90,6 @@ namespace SetCalculator
             this.label_SavedSet = new System.Windows.Forms.Label();
             this.button_SaveSet = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.radioButton_Universum3 = new System.Windows.Forms.RadioButton();
             this.groupBox_Set1.SuspendLayout();
             this.groupBox_Set2.SuspendLayout();
             this.groupBox_Set3.SuspendLayout();
@@ -110,13 +107,12 @@ namespace SetCalculator
             this.textBox_Set1.Size = new System.Drawing.Size(659, 23);
             this.textBox_Set1.TabIndex = 0;
             this.textBox_Set1.Tag = "1";
-            this.textBox_Set1.Text = "-20 -19 -18 -17 -16 -15 -14 -13 - 12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4" +
-    " 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
+            this.textBox_Set1.Text = "-20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 " +
+    "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
             this.textBox_Set1.TextChanged += new System.EventHandler(this.TextBoxSet_TextChanged);
             // 
             // groupBox_Set1
             // 
-            this.groupBox_Set1.Controls.Add(this.label_Warning1);
             this.groupBox_Set1.Controls.Add(this.textBox_Size1);
             this.groupBox_Set1.Controls.Add(this.label_N1);
             this.groupBox_Set1.Controls.Add(this.textBox_Multiplicity1);
@@ -136,18 +132,8 @@ namespace SetCalculator
             this.groupBox_Set1.Size = new System.Drawing.Size(681, 172);
             this.groupBox_Set1.TabIndex = 46;
             this.groupBox_Set1.TabStop = false;
+            this.groupBox_Set1.Tag = "1";
             this.groupBox_Set1.Text = "Множество 1";
-            // 
-            // label_Warning1
-            // 
-            this.label_Warning1.AutoSize = true;
-            this.label_Warning1.BackColor = System.Drawing.SystemColors.Control;
-            this.label_Warning1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label_Warning1.Location = new System.Drawing.Point(124, 99);
-            this.label_Warning1.Name = "label_Warning1";
-            this.label_Warning1.Size = new System.Drawing.Size(28, 17);
-            this.label_Warning1.TabIndex = 6;
-            this.label_Warning1.Text = "OK";
             // 
             // textBox_Size1
             // 
@@ -157,6 +143,7 @@ namespace SetCalculator
             this.textBox_Size1.Size = new System.Drawing.Size(21, 23);
             this.textBox_Size1.TabIndex = 3;
             this.textBox_Size1.Text = "41";
+            this.textBox_Size1.TextChanged += new System.EventHandler(this.CheckSizeOfSet);
             // 
             // label_N1
             // 
@@ -266,7 +253,6 @@ namespace SetCalculator
             // 
             // groupBox_Set2
             // 
-            this.groupBox_Set2.Controls.Add(this.label_Warning2);
             this.groupBox_Set2.Controls.Add(this.textBox_Size2);
             this.groupBox_Set2.Controls.Add(this.label_N2);
             this.groupBox_Set2.Controls.Add(this.textBox_Multiplicity2);
@@ -286,18 +272,8 @@ namespace SetCalculator
             this.groupBox_Set2.Size = new System.Drawing.Size(681, 172);
             this.groupBox_Set2.TabIndex = 47;
             this.groupBox_Set2.TabStop = false;
+            this.groupBox_Set2.Tag = "2";
             this.groupBox_Set2.Text = "Множество 2";
-            // 
-            // label_Warning2
-            // 
-            this.label_Warning2.AutoSize = true;
-            this.label_Warning2.BackColor = System.Drawing.SystemColors.Control;
-            this.label_Warning2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label_Warning2.Location = new System.Drawing.Point(124, 101);
-            this.label_Warning2.Name = "label_Warning2";
-            this.label_Warning2.Size = new System.Drawing.Size(28, 17);
-            this.label_Warning2.TabIndex = 6;
-            this.label_Warning2.Text = "OK";
             // 
             // textBox_Size2
             // 
@@ -307,6 +283,7 @@ namespace SetCalculator
             this.textBox_Size2.Size = new System.Drawing.Size(21, 23);
             this.textBox_Size2.TabIndex = 13;
             this.textBox_Size2.Text = "41";
+            this.textBox_Size2.TextChanged += new System.EventHandler(this.CheckSizeOfSet);
             // 
             // label_N2
             // 
@@ -423,13 +400,12 @@ namespace SetCalculator
             this.textBox_Set2.Size = new System.Drawing.Size(659, 23);
             this.textBox_Set2.TabIndex = 10;
             this.textBox_Set2.Tag = "2";
-            this.textBox_Set2.Text = "-20 -19 -18 -17 -16 -15 -14 -13 - 12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4" +
-    " 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
+            this.textBox_Set2.Text = "-20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 " +
+    "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\r\n";
             this.textBox_Set2.TextChanged += new System.EventHandler(this.TextBoxSet_TextChanged);
             // 
             // groupBox_Set3
             // 
-            this.groupBox_Set3.Controls.Add(this.label_Warning3);
             this.groupBox_Set3.Controls.Add(this.textBox_Size3);
             this.groupBox_Set3.Controls.Add(this.label_N3);
             this.groupBox_Set3.Controls.Add(this.textBox_Multiplicity3);
@@ -449,18 +425,8 @@ namespace SetCalculator
             this.groupBox_Set3.Size = new System.Drawing.Size(681, 172);
             this.groupBox_Set3.TabIndex = 48;
             this.groupBox_Set3.TabStop = false;
+            this.groupBox_Set3.Tag = "3";
             this.groupBox_Set3.Text = "Множество 3";
-            // 
-            // label_Warning3
-            // 
-            this.label_Warning3.AutoSize = true;
-            this.label_Warning3.BackColor = System.Drawing.SystemColors.Control;
-            this.label_Warning3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label_Warning3.Location = new System.Drawing.Point(127, 101);
-            this.label_Warning3.Name = "label_Warning3";
-            this.label_Warning3.Size = new System.Drawing.Size(28, 17);
-            this.label_Warning3.TabIndex = 6;
-            this.label_Warning3.Text = "OK";
             // 
             // textBox_Size3
             // 
@@ -470,6 +436,7 @@ namespace SetCalculator
             this.textBox_Size3.Size = new System.Drawing.Size(21, 23);
             this.textBox_Size3.TabIndex = 23;
             this.textBox_Size3.Text = "41";
+            this.textBox_Size3.TextChanged += new System.EventHandler(this.CheckSizeOfSet);
             // 
             // label_N3
             // 
@@ -499,6 +466,17 @@ namespace SetCalculator
             this.radioButton_Negative3.TabStop = true;
             this.radioButton_Negative3.Text = "Отрицательные";
             this.radioButton_Negative3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_Universum3
+            // 
+            this.radioButton_Universum3.AutoSize = true;
+            this.radioButton_Universum3.Location = new System.Drawing.Point(455, 129);
+            this.radioButton_Universum3.Name = "radioButton_Universum3";
+            this.radioButton_Universum3.Size = new System.Drawing.Size(97, 21);
+            this.radioButton_Universum3.TabIndex = 30;
+            this.radioButton_Universum3.TabStop = true;
+            this.radioButton_Universum3.Text = "Универсум";
+            this.radioButton_Universum3.UseVisualStyleBackColor = true;
             // 
             // radioButton_Odd3
             // 
@@ -572,11 +550,11 @@ namespace SetCalculator
             this.textBox_Set3.Location = new System.Drawing.Point(8, 23);
             this.textBox_Set3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Set3.Name = "textBox_Set3";
-            this.textBox_Set3.Size = new System.Drawing.Size(659, 23);
+            this.textBox_Set3.Size = new System.Drawing.Size(662, 23);
             this.textBox_Set3.TabIndex = 20;
             this.textBox_Set3.Tag = "3";
-            this.textBox_Set3.Text = "-20 -19 -18 -17 -16 -15 -14 -13 - 12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4" +
-    " 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
+            this.textBox_Set3.Text = "-20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 " +
+    "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\r\n";
             this.textBox_Set3.TextChanged += new System.EventHandler(this.TextBoxSet_TextChanged);
             // 
             // textBox_SavedSet
@@ -588,8 +566,8 @@ namespace SetCalculator
             this.textBox_SavedSet.ReadOnly = true;
             this.textBox_SavedSet.Size = new System.Drawing.Size(659, 23);
             this.textBox_SavedSet.TabIndex = 45;
-            this.textBox_SavedSet.Text = "-20 -19 -18 -17 -16 -15 -14 -13 - 12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4" +
-    " 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
+            this.textBox_SavedSet.Text = "-20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 " +
+    "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\r\n";
             // 
             // textBox_Result
             // 
@@ -600,8 +578,8 @@ namespace SetCalculator
             this.textBox_Result.ReadOnly = true;
             this.textBox_Result.Size = new System.Drawing.Size(659, 23);
             this.textBox_Result.TabIndex = 43;
-            this.textBox_Result.Text = "-20 -19 -18 -17 -16 -15 -14 -13 - 12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4" +
-    " 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
+            this.textBox_Result.Text = "-20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 " +
+    "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\r\n";
             // 
             // groupBox_FirstOperand
             // 
@@ -822,17 +800,6 @@ namespace SetCalculator
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // radioButton_Universum3
-            // 
-            this.radioButton_Universum3.AutoSize = true;
-            this.radioButton_Universum3.Location = new System.Drawing.Point(455, 129);
-            this.radioButton_Universum3.Name = "radioButton_Universum3";
-            this.radioButton_Universum3.Size = new System.Drawing.Size(97, 21);
-            this.radioButton_Universum3.TabIndex = 30;
-            this.radioButton_Universum3.TabStop = true;
-            this.radioButton_Universum3.Text = "Универсум";
-            this.radioButton_Universum3.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -909,9 +876,6 @@ namespace SetCalculator
         private System.Windows.Forms.RadioButton radioButton_Auto3;
         private System.Windows.Forms.RadioButton radioButton_Manual3;
         private System.Windows.Forms.TextBox textBox_Set3;
-        private System.Windows.Forms.Label label_Warning1;
-        private System.Windows.Forms.Label label_Warning2;
-        private System.Windows.Forms.Label label_Warning3;
         private System.Windows.Forms.TextBox textBox_SavedSet;
         private System.Windows.Forms.TextBox textBox_Result;
         private System.Windows.Forms.GroupBox groupBox_FirstOperand;
