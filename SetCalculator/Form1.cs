@@ -82,7 +82,7 @@ namespace SetCalculator
             }
         }
 
-        private void Auto_Enabled(object sender, EventArgs e)
+        private void Auto_Checked(object sender, EventArgs e)
         {
             if (sender is RadioButton rb && rb.Checked)
             {
@@ -103,6 +103,36 @@ namespace SetCalculator
                 {
                     rb.BackColor = Color.Red;
                 }
+            }
+        }
+
+        private void Positive_Checked(object sender, EventArgs e)
+        {
+            if (sender is RadioButton rb && rb.Checked)
+            {
+                int ind = int.Parse(rb.Parent.Tag.ToString());
+                Set newSet = new Set();
+                for (int i = 0; i <= Set.UniversumMax; i++)
+                {
+                    newSet.Add(i);
+                }
+                SetSet(ind, newSet);
+                SetSetToTextBox(ind, newSet);
+            }
+        }
+
+        private void Negative_Checked(object sender, EventArgs e)
+        {
+            if (sender is RadioButton rb && rb.Checked)
+            {
+                int ind = int.Parse(rb.Parent.Tag.ToString());
+                Set newSet = new Set();
+                for (int i = Set.UniversumMin; i < 0; i++)
+                {
+                    newSet.Add(i);
+                }
+                SetSet(ind, newSet);
+                SetSetToTextBox(ind, newSet);
             }
         }
 

@@ -173,6 +173,7 @@ namespace SetCalculator
             this.radioButton_Negative1.TabStop = true;
             this.radioButton_Negative1.Text = "Отрицательные";
             this.radioButton_Negative1.UseVisualStyleBackColor = true;
+            this.radioButton_Negative1.CheckedChanged += new System.EventHandler(this.Negative_Checked);
             // 
             // radioButton_Universum1
             // 
@@ -228,6 +229,7 @@ namespace SetCalculator
             this.radioButton_Positive1.TabStop = true;
             this.radioButton_Positive1.Text = "Положительные";
             this.radioButton_Positive1.UseVisualStyleBackColor = true;
+            this.radioButton_Positive1.CheckedChanged += new System.EventHandler(this.Positive_Checked);
             // 
             // radioButton_Auto1
             // 
@@ -239,7 +241,7 @@ namespace SetCalculator
             this.radioButton_Auto1.TabStop = true;
             this.radioButton_Auto1.Text = "Авто";
             this.radioButton_Auto1.UseVisualStyleBackColor = true;
-            this.radioButton_Auto1.CheckedChanged += new System.EventHandler(this.Auto_Enabled);
+            this.radioButton_Auto1.CheckedChanged += new System.EventHandler(this.Auto_Checked);
             // 
             // radioButton_Manual1
             // 
@@ -314,6 +316,7 @@ namespace SetCalculator
             this.radioButton_Negative2.TabStop = true;
             this.radioButton_Negative2.Text = "Отрицательные";
             this.radioButton_Negative2.UseVisualStyleBackColor = true;
+            this.radioButton_Negative2.CheckedChanged += new System.EventHandler(this.Negative_Checked);
             // 
             // radioButton_Universum2
             // 
@@ -369,6 +372,7 @@ namespace SetCalculator
             this.radioButton_Positive2.TabStop = true;
             this.radioButton_Positive2.Text = "Положительные";
             this.radioButton_Positive2.UseVisualStyleBackColor = true;
+            this.radioButton_Positive2.CheckedChanged += new System.EventHandler(this.Positive_Checked);
             // 
             // radioButton_Auto2
             // 
@@ -380,7 +384,7 @@ namespace SetCalculator
             this.radioButton_Auto2.TabStop = true;
             this.radioButton_Auto2.Text = "Авто";
             this.radioButton_Auto2.UseVisualStyleBackColor = true;
-            this.radioButton_Auto2.CheckedChanged += new System.EventHandler(this.Auto_Enabled);
+            this.radioButton_Auto2.CheckedChanged += new System.EventHandler(this.Auto_Checked);
             // 
             // radioButton_Manual2
             // 
@@ -468,6 +472,7 @@ namespace SetCalculator
             this.radioButton_Negative3.TabStop = true;
             this.radioButton_Negative3.Text = "Отрицательные";
             this.radioButton_Negative3.UseVisualStyleBackColor = true;
+            this.radioButton_Negative3.CheckedChanged += new System.EventHandler(this.Negative_Checked);
             // 
             // radioButton_Universum3
             // 
@@ -523,6 +528,7 @@ namespace SetCalculator
             this.radioButton_Positive3.TabStop = true;
             this.radioButton_Positive3.Text = "Положительные";
             this.radioButton_Positive3.UseVisualStyleBackColor = true;
+            this.radioButton_Positive3.CheckedChanged += new System.EventHandler(this.Positive_Checked);
             // 
             // radioButton_Auto3
             // 
@@ -534,7 +540,7 @@ namespace SetCalculator
             this.radioButton_Auto3.TabStop = true;
             this.radioButton_Auto3.Text = "Авто";
             this.radioButton_Auto3.UseVisualStyleBackColor = true;
-            this.radioButton_Auto3.CheckedChanged += new System.EventHandler(this.Auto_Enabled);
+            this.radioButton_Auto3.CheckedChanged += new System.EventHandler(this.Auto_Checked);
             // 
             // radioButton_Manual3
             // 
