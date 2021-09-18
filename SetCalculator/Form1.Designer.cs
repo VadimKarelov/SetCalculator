@@ -186,6 +186,7 @@ namespace SetCalculator
             this.radioButton_Universum1.TabStop = true;
             this.radioButton_Universum1.Text = "Универсум";
             this.radioButton_Universum1.UseVisualStyleBackColor = true;
+            this.radioButton_Universum1.CheckedChanged += new System.EventHandler(this.Universum_Checked);
             // 
             // radioButton_Odd1
             // 
@@ -333,6 +334,7 @@ namespace SetCalculator
             this.radioButton_Universum2.TabStop = true;
             this.radioButton_Universum2.Text = "Универсум";
             this.radioButton_Universum2.UseVisualStyleBackColor = true;
+            this.radioButton_Universum2.CheckedChanged += new System.EventHandler(this.Universum_Checked);
             // 
             // radioButton_Odd2
             // 
@@ -493,6 +495,7 @@ namespace SetCalculator
             this.radioButton_Universum3.TabStop = true;
             this.radioButton_Universum3.Text = "Универсум";
             this.radioButton_Universum3.UseVisualStyleBackColor = true;
+            this.radioButton_Universum3.CheckedChanged += new System.EventHandler(this.Universum_Checked);
             // 
             // radioButton_Odd3
             // 

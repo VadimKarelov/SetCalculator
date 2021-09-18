@@ -8,21 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// not myself
-
 namespace SetCalculator
 {
     public partial class Form1 : Form
     {
+        // <my trail is lost>, but i will continue with it at next commit
         private Set set1 = new Set();
         private Set set2 = new Set();
         private Set set3 = new Set();
         private Set set4 = new Set();
-
-        private int size1 = 0;
-        private int size2 = 0;
-        private int size3 = 0;
-        private int size4 = 0;
 
         private Random rn = new Random();
 
@@ -55,14 +49,26 @@ namespace SetCalculator
                 try
                 {
                     res = tb.Text.Split(' ').ToList().Select(int.Parse).ToList();
+                    Set newSet = new Set(res);
+                    if (!CheckSetForUniversum(newSet)) throw new Exception();
                     SetColorToTextBox(ref tb, Color.White);
-                    SetSet(ind, new Set(res));
+                    SetSet(ind, newSet);
                 }
                 catch
                 {
                     SetColorToTextBox(ref tb, Color.Red);
                 }                
             }
+        }
+
+        private bool CheckSetForUniversum(Set set)
+        {
+            foreach (var elem in set.Collection)
+            {
+                if (elem < Set.UniversumMin || elem > Set.UniversumMax)
+                    return false;
+            }
+            return true;
         }
 
         private void TextBoxMultiplicity_TextChanged(object sender, EventArgs e)
@@ -97,6 +103,23 @@ namespace SetCalculator
                 {
                     SetColorToTextBox(ref tb, Color.Red);
                 }
+            }
+        }
+
+        private void Universum_Checked(object sender, EventArgs e)
+        {
+            if (sender is RadioButton rb && rb.Checked)
+            {
+                int ind = int.Parse(rb.Parent.Tag.ToString());
+                Set newSet = new Set();
+
+                for (int i = Set.UniversumMin; i <= Set.UniversumMax; i++)
+                {
+                    newSet.Add(i);
+                }
+
+                SetSet(ind, newSet);
+                SetSetToTextBox(ind, newSet);
             }
         }
 
