@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// not myself
+
 namespace SetCalculator
 {
     public partial class Form1 : Form
@@ -63,6 +65,22 @@ namespace SetCalculator
             }
         }
 
+        private void TextBoxMultiplicity_TextChanged(object sender, EventArgs e)
+        {
+            if (sender is TextBox tb)
+            {
+                try
+                {
+                    int res = int.Parse(tb.Text);
+                    SetColorToTextBox(ref tb, Color.White);
+                }
+                catch
+                {
+                    SetColorToTextBox(ref tb, Color.Red);
+                }
+            }
+        }
+
         private void CheckSizeOfSet(object sender, EventArgs e)
         {
             if (sender is TextBox tb)
@@ -106,6 +124,33 @@ namespace SetCalculator
             }
         }
 
+        private void Multiplicity_Checked(object sender, EventArgs e)
+        {
+            if (sender is RadioButton rb && rb.Checked)
+            {
+                int ind = int.Parse(rb.Parent.Tag.ToString());
+                try
+                {
+                    // checking
+                    rb.BackColor = Color.White;
+                    int multiplicity = int.Parse(GetMultiplicity(ind));
+                    // generate
+                    Set newSet = new Set();
+                    for (int i = Set.UniversumMin; i <= Set.UniversumMax; i++)
+                    {
+                        if (i % multiplicity == 0)
+                            newSet.Add(i);
+                    }
+                    SetSet(ind, newSet);
+                    SetSetToTextBox(ind, newSet);
+                }
+                catch
+                {
+                    rb.BackColor = Color.Red;
+                }
+            }
+        }
+
         private void Positive_Checked(object sender, EventArgs e)
         {
             if (sender is RadioButton rb && rb.Checked)
@@ -130,6 +175,38 @@ namespace SetCalculator
                 for (int i = Set.UniversumMin; i < 0; i++)
                 {
                     newSet.Add(i);
+                }
+                SetSet(ind, newSet);
+                SetSetToTextBox(ind, newSet);
+            }
+        }
+
+        private void Odd_Checked(object sender, EventArgs e)
+        {
+            if (sender is RadioButton rb && rb.Checked)
+            {
+                int ind = int.Parse(rb.Parent.Tag.ToString());
+                Set newSet = new Set();
+                for (int i = Set.UniversumMin; i <= Set.UniversumMax; i++)
+                {
+                    if (i % 2 != 0)
+                        newSet.Add(i);
+                }
+                SetSet(ind, newSet);
+                SetSetToTextBox(ind, newSet);
+            }
+        }
+
+        private void Even_Checked(object sender, EventArgs e)
+        {
+            if (sender is RadioButton rb && rb.Checked)
+            {
+                int ind = int.Parse(rb.Parent.Tag.ToString());
+                Set newSet = new Set();
+                for (int i = Set.UniversumMin; i <= Set.UniversumMax; i++)
+                {
+                    if (i % 2 == 0)
+                        newSet.Add(i);
                 }
                 SetSet(ind, newSet);
                 SetSetToTextBox(ind, newSet);
@@ -196,6 +273,17 @@ namespace SetCalculator
                 case 1: return textBox_Size1.Text;
                 case 2: return textBox_Size2.Text;
                 case 3: return textBox_Size3.Text;
+                default: return "0";
+            }
+        }
+
+        private string GetMultiplicity(int numberOfTextBox)
+        {
+            switch (numberOfTextBox)
+            {
+                case 1: return textBox_Multiplicity1.Text;
+                case 2: return textBox_Multiplicity2.Text;
+                case 3: return textBox_Multiplicity3.Text;
                 default: return "0";
             }
         }

@@ -162,6 +162,7 @@ namespace SetCalculator
             this.textBox_Multiplicity1.Size = new System.Drawing.Size(24, 23);
             this.textBox_Multiplicity1.TabIndex = 9;
             this.textBox_Multiplicity1.Text = "21";
+            this.textBox_Multiplicity1.TextChanged += new System.EventHandler(this.TextBoxMultiplicity_TextChanged);
             // 
             // radioButton_Negative1
             // 
@@ -196,6 +197,7 @@ namespace SetCalculator
             this.radioButton_Odd1.TabStop = true;
             this.radioButton_Odd1.Text = "Нечетные";
             this.radioButton_Odd1.UseVisualStyleBackColor = true;
+            this.radioButton_Odd1.CheckedChanged += new System.EventHandler(this.Odd_Checked);
             // 
             // radioButton_Multiplicity1
             // 
@@ -207,6 +209,7 @@ namespace SetCalculator
             this.radioButton_Multiplicity1.TabStop = true;
             this.radioButton_Multiplicity1.Text = "Кратность";
             this.radioButton_Multiplicity1.UseVisualStyleBackColor = true;
+            this.radioButton_Multiplicity1.CheckedChanged += new System.EventHandler(this.Multiplicity_Checked);
             // 
             // radioButton_Even1
             // 
@@ -218,6 +221,7 @@ namespace SetCalculator
             this.radioButton_Even1.TabStop = true;
             this.radioButton_Even1.Text = "Четные";
             this.radioButton_Even1.UseVisualStyleBackColor = true;
+            this.radioButton_Even1.CheckedChanged += new System.EventHandler(this.Even_Checked);
             // 
             // radioButton_Positive1
             // 
@@ -305,6 +309,7 @@ namespace SetCalculator
             this.textBox_Multiplicity2.Size = new System.Drawing.Size(24, 23);
             this.textBox_Multiplicity2.TabIndex = 19;
             this.textBox_Multiplicity2.Text = "21";
+            this.textBox_Multiplicity2.TextChanged += new System.EventHandler(this.TextBoxMultiplicity_TextChanged);
             // 
             // radioButton_Negative2
             // 
@@ -339,6 +344,7 @@ namespace SetCalculator
             this.radioButton_Odd2.TabStop = true;
             this.radioButton_Odd2.Text = "Нечетные";
             this.radioButton_Odd2.UseVisualStyleBackColor = true;
+            this.radioButton_Odd2.CheckedChanged += new System.EventHandler(this.Odd_Checked);
             // 
             // radioButton_Multiplicity2
             // 
@@ -350,6 +356,7 @@ namespace SetCalculator
             this.radioButton_Multiplicity2.TabStop = true;
             this.radioButton_Multiplicity2.Text = "Кратность";
             this.radioButton_Multiplicity2.UseVisualStyleBackColor = true;
+            this.radioButton_Multiplicity2.CheckedChanged += new System.EventHandler(this.Multiplicity_Checked);
             // 
             // radioButton_Even2
             // 
@@ -361,6 +368,7 @@ namespace SetCalculator
             this.radioButton_Even2.TabStop = true;
             this.radioButton_Even2.Text = "Четные";
             this.radioButton_Even2.UseVisualStyleBackColor = true;
+            this.radioButton_Even2.CheckedChanged += new System.EventHandler(this.Even_Checked);
             // 
             // radioButton_Positive2
             // 
@@ -461,6 +469,7 @@ namespace SetCalculator
             this.textBox_Multiplicity3.Size = new System.Drawing.Size(24, 23);
             this.textBox_Multiplicity3.TabIndex = 29;
             this.textBox_Multiplicity3.Text = "21";
+            this.textBox_Multiplicity3.TextChanged += new System.EventHandler(this.TextBoxMultiplicity_TextChanged);
             // 
             // radioButton_Negative3
             // 
@@ -495,6 +504,7 @@ namespace SetCalculator
             this.radioButton_Odd3.TabStop = true;
             this.radioButton_Odd3.Text = "Нечетные";
             this.radioButton_Odd3.UseVisualStyleBackColor = true;
+            this.radioButton_Odd3.CheckedChanged += new System.EventHandler(this.Odd_Checked);
             // 
             // radioButton_Multiplicity3
             // 
@@ -506,6 +516,7 @@ namespace SetCalculator
             this.radioButton_Multiplicity3.TabStop = true;
             this.radioButton_Multiplicity3.Text = "Кратность";
             this.radioButton_Multiplicity3.UseVisualStyleBackColor = true;
+            this.radioButton_Multiplicity3.CheckedChanged += new System.EventHandler(this.Multiplicity_Checked);
             // 
             // radioButton_Even3
             // 
@@ -517,6 +528,7 @@ namespace SetCalculator
             this.radioButton_Even3.TabStop = true;
             this.radioButton_Even3.Text = "Четные";
             this.radioButton_Even3.UseVisualStyleBackColor = true;
+            this.radioButton_Even3.CheckedChanged += new System.EventHandler(this.Even_Checked);
             // 
             // radioButton_Positive3
             // 
