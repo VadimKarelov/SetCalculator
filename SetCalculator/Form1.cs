@@ -12,11 +12,17 @@ namespace SetCalculator
 {
     public partial class Form1 : Form
     {
-        // <my trail is lost>, but i will continue with it at next commit
+        // storage
         private Set set1 = new Set();
         private Set set2 = new Set();
         private Set set3 = new Set();
         private Set set4 = new Set();
+        private Set resultSet = new Set();
+
+        // active elements
+        private Set firstOperand = new Set();
+        private Set secondOperand = new Set();
+        private string operation = "";
 
         private Random rn = new Random();
 
@@ -29,6 +35,8 @@ namespace SetCalculator
         // === init methods ===
         private void SetUiInitState()
         {
+            SetActiveSet();
+
             radioButton_Manual1.Checked = true;
             radioButton_Manual2.Checked = true;
             radioButton_Manual3.Checked = true;
@@ -36,10 +44,10 @@ namespace SetCalculator
             radioButton_Set11.Checked = true;
             radioButton_Set21.Checked = true;
 
-            radioButton_Addition.Checked = true;
+            radioButton_Addition.Checked = true;            
         }
 
-        // === check text in text box ===
+        // === inpu data about sets ===
         private void TextBoxSet_TextChanged(object sender, EventArgs e)
         {
             if (sender is TextBox tb)
@@ -53,6 +61,7 @@ namespace SetCalculator
                     if (!CheckSetForUniversum(newSet)) throw new Exception();
                     SetColorToTextBox(ref tb, Color.White);
                     SetSet(ind, newSet);
+                    SetActiveSet();
                 }
                 catch
                 {
@@ -255,7 +264,7 @@ namespace SetCalculator
             return res;
         }
 
-        // === use correct element ===
+        // === extra methods ===
         private void SetColorToTextBox(ref TextBox tb, Color color)
         {
             tb.BackColor = color;
@@ -273,14 +282,8 @@ namespace SetCalculator
 
         private void SetSetToTextBox(int n, Set set)
         {
-            // generate string
-            string str = "";
-            for (int i = 0; i < set.Collection.Count; i++)
-            {
-                str += set.Collection[i] + " ";
-            }
-            str = str.Remove(str.Length - 1);
-            // set
+            string str = set.ToString();
+            // seting
             switch (n)
             {
                 case 1: textBox_Set1.Text = str; break;
@@ -309,6 +312,73 @@ namespace SetCalculator
                 case 3: return textBox_Multiplicity3.Text;
                 default: return "0";
             }
+        }
+
+        private void SetActiveSet()
+        {
+            FirstOperand_Changed(radioButton_Set11, new EventArgs());
+            FirstOperand_Changed(radioButton_Set12, new EventArgs());
+            FirstOperand_Changed(radioButton_Set13, new EventArgs());
+            FirstOperand_Changed(radioButton_Set14, new EventArgs());
+
+            SecondOperand_Changed(radioButton_Set21, new EventArgs());
+            SecondOperand_Changed(radioButton_Set22, new EventArgs());
+            SecondOperand_Changed(radioButton_Set23, new EventArgs());
+            SecondOperand_Changed(radioButton_Set24, new EventArgs());
+        }
+
+        // === operation ===
+        // <I'm with my head> today
+        private void FirstOperand_Changed(object sender, EventArgs e)
+        {
+            if (sender is RadioButton rb && rb.Checked)
+            {
+                switch (rb.Tag.ToString())
+                {
+                    case "1": firstOperand = set1; break;
+                    case "2": firstOperand = set2; break;
+                    case "3": firstOperand = set3; break;
+                    case "4": firstOperand = set4; break;
+                }
+                Calculation();
+            }
+        }
+
+        private void SecondOperand_Changed(object sender, EventArgs e)
+        {
+            if (sender is RadioButton rb && rb.Checked)
+            {
+                switch (rb.Tag.ToString())
+                {
+                    case "1": secondOperand = set1; break;
+                    case "2": secondOperand = set2; break;
+                    case "3": secondOperand = set3; break;
+                    case "4": secondOperand = set4; break;
+                }
+                Calculation();
+            }
+        }
+
+        private void Operation_Changed(object sender, EventArgs e)
+        {
+            if (sender is RadioButton rb && rb.Checked)
+            {
+                operation = rb.Tag.ToString();
+                Calculation();
+            }
+        }
+
+        private void Calculation()
+        {
+            switch (operation)
+            {
+                case "addition": resultSet = Set.Addition(firstOperand); break;
+                case "merge": resultSet = Set.Merge(firstOperand, secondOperand); break;
+                case "cross": resultSet = Set.Crossing(firstOperand, secondOperand); break;
+                case "diff": resultSet = Set.Difference(firstOperand, secondOperand); break;
+                case "symDiff": resultSet = Set.SymetricDifference(firstOperand, secondOperand); break;
+            }
+            textBox_Result.Text = resultSet.ToString();
         }
     }
 }

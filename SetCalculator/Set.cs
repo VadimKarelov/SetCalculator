@@ -35,7 +35,7 @@ namespace SetCalculator
                 res += elem.ToString() + " ";
             }
             // delete last space
-            res = res.Remove(res.Length - 1);
+            if (res.Length > 0) res = res.Remove(res.Length - 1);
             return res;
         }
 

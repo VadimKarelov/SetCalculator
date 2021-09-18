@@ -90,6 +90,9 @@ namespace SetCalculator
             this.label_SavedSet = new System.Windows.Forms.Label();
             this.button_SaveSet = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button_Change1 = new System.Windows.Forms.Button();
+            this.button_Change2 = new System.Windows.Forms.Button();
+            this.button_Change3 = new System.Windows.Forms.Button();
             this.groupBox_Set1.SuspendLayout();
             this.groupBox_Set2.SuspendLayout();
             this.groupBox_Set3.SuspendLayout();
@@ -107,8 +110,6 @@ namespace SetCalculator
             this.textBox_Set1.Size = new System.Drawing.Size(659, 23);
             this.textBox_Set1.TabIndex = 0;
             this.textBox_Set1.Tag = "1";
-            this.textBox_Set1.Text = "-20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 " +
-    "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
             this.textBox_Set1.TextChanged += new System.EventHandler(this.TextBoxSet_TextChanged);
             // 
             // groupBox_Set1
@@ -161,7 +162,7 @@ namespace SetCalculator
             this.textBox_Multiplicity1.Name = "textBox_Multiplicity1";
             this.textBox_Multiplicity1.Size = new System.Drawing.Size(24, 23);
             this.textBox_Multiplicity1.TabIndex = 9;
-            this.textBox_Multiplicity1.Text = "21";
+            this.textBox_Multiplicity1.Text = "5";
             this.textBox_Multiplicity1.TextChanged += new System.EventHandler(this.TextBoxMultiplicity_TextChanged);
             // 
             // radioButton_Negative1
@@ -309,7 +310,7 @@ namespace SetCalculator
             this.textBox_Multiplicity2.Name = "textBox_Multiplicity2";
             this.textBox_Multiplicity2.Size = new System.Drawing.Size(24, 23);
             this.textBox_Multiplicity2.TabIndex = 19;
-            this.textBox_Multiplicity2.Text = "21";
+            this.textBox_Multiplicity2.Text = "5";
             this.textBox_Multiplicity2.TextChanged += new System.EventHandler(this.TextBoxMultiplicity_TextChanged);
             // 
             // radioButton_Negative2
@@ -416,8 +417,6 @@ namespace SetCalculator
             this.textBox_Set2.Size = new System.Drawing.Size(659, 23);
             this.textBox_Set2.TabIndex = 10;
             this.textBox_Set2.Tag = "2";
-            this.textBox_Set2.Text = "-20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 " +
-    "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\r\n";
             this.textBox_Set2.TextChanged += new System.EventHandler(this.TextBoxSet_TextChanged);
             // 
             // groupBox_Set3
@@ -470,7 +469,7 @@ namespace SetCalculator
             this.textBox_Multiplicity3.Name = "textBox_Multiplicity3";
             this.textBox_Multiplicity3.Size = new System.Drawing.Size(24, 23);
             this.textBox_Multiplicity3.TabIndex = 29;
-            this.textBox_Multiplicity3.Text = "21";
+            this.textBox_Multiplicity3.Text = "5";
             this.textBox_Multiplicity3.TextChanged += new System.EventHandler(this.TextBoxMultiplicity_TextChanged);
             // 
             // radioButton_Negative3
@@ -577,8 +576,6 @@ namespace SetCalculator
             this.textBox_Set3.Size = new System.Drawing.Size(662, 23);
             this.textBox_Set3.TabIndex = 20;
             this.textBox_Set3.Tag = "3";
-            this.textBox_Set3.Text = "-20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 " +
-    "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\r\n";
             this.textBox_Set3.TextChanged += new System.EventHandler(this.TextBoxSet_TextChanged);
             // 
             // textBox_SavedSet
@@ -590,8 +587,8 @@ namespace SetCalculator
             this.textBox_SavedSet.ReadOnly = true;
             this.textBox_SavedSet.Size = new System.Drawing.Size(659, 23);
             this.textBox_SavedSet.TabIndex = 45;
-            this.textBox_SavedSet.Text = "-20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 " +
-    "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\r\n";
+            this.textBox_SavedSet.Tag = "4";
+            this.textBox_SavedSet.TextChanged += new System.EventHandler(this.TextBoxSet_TextChanged);
             // 
             // textBox_Result
             // 
@@ -602,8 +599,6 @@ namespace SetCalculator
             this.textBox_Result.ReadOnly = true;
             this.textBox_Result.Size = new System.Drawing.Size(659, 23);
             this.textBox_Result.TabIndex = 43;
-            this.textBox_Result.Text = "-20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 " +
-    "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\r\n";
             // 
             // groupBox_FirstOperand
             // 
@@ -626,8 +621,10 @@ namespace SetCalculator
             this.radioButton_Set14.Size = new System.Drawing.Size(111, 21);
             this.radioButton_Set14.TabIndex = 33;
             this.radioButton_Set14.TabStop = true;
+            this.radioButton_Set14.Tag = "4";
             this.radioButton_Set14.Text = "Множество 4";
             this.radioButton_Set14.UseVisualStyleBackColor = true;
+            this.radioButton_Set14.CheckedChanged += new System.EventHandler(this.FirstOperand_Changed);
             // 
             // radioButton_Set13
             // 
@@ -637,8 +634,10 @@ namespace SetCalculator
             this.radioButton_Set13.Size = new System.Drawing.Size(111, 21);
             this.radioButton_Set13.TabIndex = 32;
             this.radioButton_Set13.TabStop = true;
+            this.radioButton_Set13.Tag = "3";
             this.radioButton_Set13.Text = "Множество 3";
             this.radioButton_Set13.UseVisualStyleBackColor = true;
+            this.radioButton_Set13.CheckedChanged += new System.EventHandler(this.FirstOperand_Changed);
             // 
             // radioButton_Set12
             // 
@@ -648,8 +647,10 @@ namespace SetCalculator
             this.radioButton_Set12.Size = new System.Drawing.Size(111, 21);
             this.radioButton_Set12.TabIndex = 31;
             this.radioButton_Set12.TabStop = true;
+            this.radioButton_Set12.Tag = "2";
             this.radioButton_Set12.Text = "Множество 2";
             this.radioButton_Set12.UseVisualStyleBackColor = true;
+            this.radioButton_Set12.CheckedChanged += new System.EventHandler(this.FirstOperand_Changed);
             // 
             // radioButton_Set11
             // 
@@ -659,8 +660,10 @@ namespace SetCalculator
             this.radioButton_Set11.Size = new System.Drawing.Size(111, 21);
             this.radioButton_Set11.TabIndex = 30;
             this.radioButton_Set11.TabStop = true;
+            this.radioButton_Set11.Tag = "1";
             this.radioButton_Set11.Text = "Множество 1";
             this.radioButton_Set11.UseVisualStyleBackColor = true;
+            this.radioButton_Set11.CheckedChanged += new System.EventHandler(this.FirstOperand_Changed);
             // 
             // groupBox_SecondOperand
             // 
@@ -683,8 +686,10 @@ namespace SetCalculator
             this.radioButton_Set24.Size = new System.Drawing.Size(111, 21);
             this.radioButton_Set24.TabIndex = 42;
             this.radioButton_Set24.TabStop = true;
+            this.radioButton_Set24.Tag = "4";
             this.radioButton_Set24.Text = "Множество 4";
             this.radioButton_Set24.UseVisualStyleBackColor = true;
+            this.radioButton_Set24.CheckedChanged += new System.EventHandler(this.SecondOperand_Changed);
             // 
             // radioButton_Set23
             // 
@@ -694,8 +699,10 @@ namespace SetCalculator
             this.radioButton_Set23.Size = new System.Drawing.Size(111, 21);
             this.radioButton_Set23.TabIndex = 41;
             this.radioButton_Set23.TabStop = true;
+            this.radioButton_Set23.Tag = "3";
             this.radioButton_Set23.Text = "Множество 3";
             this.radioButton_Set23.UseVisualStyleBackColor = true;
+            this.radioButton_Set23.CheckedChanged += new System.EventHandler(this.SecondOperand_Changed);
             // 
             // radioButton_Set22
             // 
@@ -705,8 +712,10 @@ namespace SetCalculator
             this.radioButton_Set22.Size = new System.Drawing.Size(111, 21);
             this.radioButton_Set22.TabIndex = 40;
             this.radioButton_Set22.TabStop = true;
+            this.radioButton_Set22.Tag = "2";
             this.radioButton_Set22.Text = "Множество 2";
             this.radioButton_Set22.UseVisualStyleBackColor = true;
+            this.radioButton_Set22.CheckedChanged += new System.EventHandler(this.SecondOperand_Changed);
             // 
             // radioButton_Set21
             // 
@@ -716,8 +725,10 @@ namespace SetCalculator
             this.radioButton_Set21.Size = new System.Drawing.Size(111, 21);
             this.radioButton_Set21.TabIndex = 39;
             this.radioButton_Set21.TabStop = true;
+            this.radioButton_Set21.Tag = "1";
             this.radioButton_Set21.Text = "Множество 1";
             this.radioButton_Set21.UseVisualStyleBackColor = true;
+            this.radioButton_Set21.CheckedChanged += new System.EventHandler(this.SecondOperand_Changed);
             // 
             // groupBox_Operation
             // 
@@ -741,8 +752,10 @@ namespace SetCalculator
             this.radioButton_SymetricDifference.Size = new System.Drawing.Size(188, 21);
             this.radioButton_SymetricDifference.TabIndex = 38;
             this.radioButton_SymetricDifference.TabStop = true;
+            this.radioButton_SymetricDifference.Tag = "symDiff";
             this.radioButton_SymetricDifference.Text = "Симметричная разность";
             this.radioButton_SymetricDifference.UseVisualStyleBackColor = true;
+            this.radioButton_SymetricDifference.CheckedChanged += new System.EventHandler(this.Operation_Changed);
             // 
             // radioButton_Difference
             // 
@@ -752,8 +765,10 @@ namespace SetCalculator
             this.radioButton_Difference.Size = new System.Drawing.Size(87, 21);
             this.radioButton_Difference.TabIndex = 37;
             this.radioButton_Difference.TabStop = true;
+            this.radioButton_Difference.Tag = "diff";
             this.radioButton_Difference.Text = "Разность";
             this.radioButton_Difference.UseVisualStyleBackColor = true;
+            this.radioButton_Difference.CheckedChanged += new System.EventHandler(this.Operation_Changed);
             // 
             // radioButton_Crossing
             // 
@@ -763,8 +778,10 @@ namespace SetCalculator
             this.radioButton_Crossing.Size = new System.Drawing.Size(115, 21);
             this.radioButton_Crossing.TabIndex = 36;
             this.radioButton_Crossing.TabStop = true;
+            this.radioButton_Crossing.Tag = "cross";
             this.radioButton_Crossing.Text = "Пересечение";
             this.radioButton_Crossing.UseVisualStyleBackColor = true;
+            this.radioButton_Crossing.CheckedChanged += new System.EventHandler(this.Operation_Changed);
             // 
             // radioButton_Merge
             // 
@@ -774,8 +791,10 @@ namespace SetCalculator
             this.radioButton_Merge.Size = new System.Drawing.Size(118, 21);
             this.radioButton_Merge.TabIndex = 35;
             this.radioButton_Merge.TabStop = true;
+            this.radioButton_Merge.Tag = "merge";
             this.radioButton_Merge.Text = "Объединение";
             this.radioButton_Merge.UseVisualStyleBackColor = true;
+            this.radioButton_Merge.CheckedChanged += new System.EventHandler(this.Operation_Changed);
             // 
             // radioButton_Addition
             // 
@@ -785,8 +804,10 @@ namespace SetCalculator
             this.radioButton_Addition.Size = new System.Drawing.Size(109, 21);
             this.radioButton_Addition.TabIndex = 34;
             this.radioButton_Addition.TabStop = true;
+            this.radioButton_Addition.Tag = "addition";
             this.radioButton_Addition.Text = "Дополнение";
             this.radioButton_Addition.UseVisualStyleBackColor = true;
+            this.radioButton_Addition.CheckedChanged += new System.EventHandler(this.Operation_Changed);
             // 
             // label_Result
             // 
@@ -824,12 +845,42 @@ namespace SetCalculator
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // button_Change1
+            // 
+            this.button_Change1.Location = new System.Drawing.Point(717, 498);
+            this.button_Change1.Name = "button_Change1";
+            this.button_Change1.Size = new System.Drawing.Size(150, 47);
+            this.button_Change1.TabIndex = 44;
+            this.button_Change1.Text = "Заменить 1";
+            this.button_Change1.UseVisualStyleBackColor = true;
+            // 
+            // button_Change2
+            // 
+            this.button_Change2.Location = new System.Drawing.Point(972, 498);
+            this.button_Change2.Name = "button_Change2";
+            this.button_Change2.Size = new System.Drawing.Size(150, 47);
+            this.button_Change2.TabIndex = 44;
+            this.button_Change2.Text = "Заменить 2";
+            this.button_Change2.UseVisualStyleBackColor = true;
+            // 
+            // button_Change3
+            // 
+            this.button_Change3.Location = new System.Drawing.Point(1226, 498);
+            this.button_Change3.Name = "button_Change3";
+            this.button_Change3.Size = new System.Drawing.Size(150, 47);
+            this.button_Change3.TabIndex = 44;
+            this.button_Change3.Text = "Заменить 3";
+            this.button_Change3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1400, 585);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.button_Change3);
+            this.Controls.Add(this.button_Change2);
+            this.Controls.Add(this.button_Change1);
             this.Controls.Add(this.button_SaveSet);
             this.Controls.Add(this.groupBox_SecondOperand);
             this.Controls.Add(this.groupBox_Operation);
@@ -925,6 +976,9 @@ namespace SetCalculator
         private System.Windows.Forms.RadioButton radioButton_Universum1;
         private System.Windows.Forms.RadioButton radioButton_Universum2;
         private System.Windows.Forms.RadioButton radioButton_Universum3;
+        private System.Windows.Forms.Button button_Change1;
+        private System.Windows.Forms.Button button_Change2;
+        private System.Windows.Forms.Button button_Change3;
     }
 }
 
