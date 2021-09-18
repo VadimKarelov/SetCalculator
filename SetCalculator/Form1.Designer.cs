@@ -239,6 +239,7 @@ namespace SetCalculator
             this.radioButton_Auto1.TabStop = true;
             this.radioButton_Auto1.Text = "Авто";
             this.radioButton_Auto1.UseVisualStyleBackColor = true;
+            this.radioButton_Auto1.CheckedChanged += new System.EventHandler(this.Auto_Enabled);
             // 
             // radioButton_Manual1
             // 
@@ -379,6 +380,7 @@ namespace SetCalculator
             this.radioButton_Auto2.TabStop = true;
             this.radioButton_Auto2.Text = "Авто";
             this.radioButton_Auto2.UseVisualStyleBackColor = true;
+            this.radioButton_Auto2.CheckedChanged += new System.EventHandler(this.Auto_Enabled);
             // 
             // radioButton_Manual2
             // 
@@ -532,6 +534,7 @@ namespace SetCalculator
             this.radioButton_Auto3.TabStop = true;
             this.radioButton_Auto3.Text = "Авто";
             this.radioButton_Auto3.UseVisualStyleBackColor = true;
+            this.radioButton_Auto3.CheckedChanged += new System.EventHandler(this.Auto_Enabled);
             // 
             // radioButton_Manual3
             // 
