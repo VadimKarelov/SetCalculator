@@ -328,7 +328,6 @@ namespace SetCalculator
         }
 
         // === operation ===
-        // <I'm with my head> today
         private void FirstOperand_Changed(object sender, EventArgs e)
         {
             if (sender is RadioButton rb && rb.Checked)
@@ -379,6 +378,27 @@ namespace SetCalculator
                 case "symDiff": resultSet = Set.SymetricDifference(firstOperand, secondOperand); break;
             }
             textBox_Result.Text = resultSet.ToString();
+        }
+
+        // === saving ===
+        private void Save_Click(object sender, EventArgs e)
+        {
+            if (sender is Button bt)
+            {
+                textBox_SavedSet.Text = textBox_Result.Text;
+                set4 = resultSet;
+            }
+        }
+
+        private void SetFromSave_Click(object sender, EventArgs e)
+        {
+            if (sender is Button bt)
+            {
+                int destination = int.Parse(bt.Tag.ToString());
+                SetSet(destination, set4);
+                SetSetToTextBox(destination, set4);
+                SetActiveSet();
+            }
         }
     }
 }

@@ -27,6 +27,7 @@ namespace SetCalculator
         /// Требуемый метод для поддержки конструктора — не изменяйте 
         /// содержимое этого метода с помощью редактора кода.
         /// </summary>
+        // <In the grains of sand of time>
         private void InitializeComponent()
         {
             this.textBox_Set1 = new System.Windows.Forms.TextBox();
@@ -835,6 +836,7 @@ namespace SetCalculator
             this.button_SaveSet.TabIndex = 44;
             this.button_SaveSet.Text = "Сохранить результат";
             this.button_SaveSet.UseVisualStyleBackColor = true;
+            this.button_SaveSet.Click += new System.EventHandler(this.Save_Click);
             // 
             // button2
             // 
@@ -851,8 +853,10 @@ namespace SetCalculator
             this.button_Change1.Name = "button_Change1";
             this.button_Change1.Size = new System.Drawing.Size(150, 47);
             this.button_Change1.TabIndex = 44;
+            this.button_Change1.Tag = "1";
             this.button_Change1.Text = "Заменить 1";
             this.button_Change1.UseVisualStyleBackColor = true;
+            this.button_Change1.Click += new System.EventHandler(this.SetFromSave_Click);
             // 
             // button_Change2
             // 
@@ -860,8 +864,10 @@ namespace SetCalculator
             this.button_Change2.Name = "button_Change2";
             this.button_Change2.Size = new System.Drawing.Size(150, 47);
             this.button_Change2.TabIndex = 44;
+            this.button_Change2.Tag = "2";
             this.button_Change2.Text = "Заменить 2";
             this.button_Change2.UseVisualStyleBackColor = true;
+            this.button_Change2.Click += new System.EventHandler(this.SetFromSave_Click);
             // 
             // button_Change3
             // 
@@ -869,8 +875,10 @@ namespace SetCalculator
             this.button_Change3.Name = "button_Change3";
             this.button_Change3.Size = new System.Drawing.Size(150, 47);
             this.button_Change3.TabIndex = 44;
+            this.button_Change3.Tag = "3";
             this.button_Change3.Text = "Заменить 3";
             this.button_Change3.UseVisualStyleBackColor = true;
+            this.button_Change3.Click += new System.EventHandler(this.SetFromSave_Click);
             // 
             // Form1
             // 
